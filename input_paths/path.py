@@ -1,3 +1,7 @@
+import os 
+import sys 
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+
 from parsing.parser import Parser
 from parsing.ast import Binary, Unary, Atom
 from parsing.token import Token
@@ -31,11 +35,12 @@ class Path(object):
 	# through the states in sequence (going through the end loop
 	# infinitely many times).
 		i = 0
-		initial = total - loop
+		initial = self.total - self.loop
 		while True:
-			if i >= total:
-				i -= loop
+			if i >= self.total:
+				i -= self.loop
 			yield self.path[i]
+			i+=1
 
 
 	def get_prop(self,str):
@@ -67,8 +72,8 @@ class Path(object):
 		return State(ident,state) 
 
 
-	def get_path(self,list):
-		return [self.get_state(i,s) for i,s in enumerate(list)]
+	def get_path(self,lst):
+		return [self.get_state(i,s) for i,s in enumerate(lst)]
 
 
 class State(object):
@@ -78,4 +83,3 @@ class State(object):
 	def __init__(self, ident, list = 0):
 		self.ident = ident
 		self.labeling = list
-		

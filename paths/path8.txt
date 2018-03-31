@@ -1,0 +1,11 @@
+10 4
+sheep_right goat_left employee_left spinach_left
+sheep_right goat_trans employee_trans spinach_trans popeye_left
+sheep_right goat_right employee_right spinach_right popeye_left
+sheep_trans goat_right employee_trans popeye_trans
+wolf_left sheep_right goat_right employee_right popeye_right
+wolf_left sheep_right employee_trans popeye_right
+wolf_left wood_left employee_left
+wolf_left wood_trans employee_trans
+wolf_left wood_right employee_right
+wolf_left wood_right employee_trans
